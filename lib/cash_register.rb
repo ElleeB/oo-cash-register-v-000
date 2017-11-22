@@ -11,7 +11,7 @@ class CashRegister
     @item_array = []
   end
 
-  def add_item(title, price, quantity = 1, last_transaction = nil.to_f)
+  def add_item(title, price, quantity = 1, last_transaction = 0)
     @last_transaction = last_transaction
     @title = title
     @price = price.to_f
@@ -22,7 +22,7 @@ class CashRegister
       @item_array << title
     end
 
-    if last_transaction != nil
+    if last_transaction != 0
       @last_transaction = price
     end
 
